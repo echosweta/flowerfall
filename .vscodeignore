@@ -1,0 +1,7 @@
+.vscode/**
+src/**
+helper/.build/**
+helper/Sources/**
+node_modules/**
+tsconfig.json
+scripts/**

@@ -1,0 +1,51 @@
+{
+  "name": "flowerfall",
+  "displayName": "Flowerfall",
+  "description": "A 2-second sprinkle of pink flowers over your screen when a terminal command succeeds (macOS).",
+  "version": "0.3.1",
+  "publisher": "local",
+  "engines": { "vscode": "^1.93.0" },
+  "categories": ["Other"],
+  "main": "./out/extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "scripts": {
+    "build:helper": "cd helper && swift build -c release && mkdir -p ../bin && cp .build/release/FlowerfallHelper ../bin/FlowerfallHelper",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build": "npm run build:helper && npm run compile",
+    "package": "npm run build && npx @vscode/vsce package --allow-missing-repository"
+  },
+  "contributes": {
+    "commands": [
+      { "command": "flowerfall.test", "title": "Flowerfall: Sprinkle now" }
+    ],
+    "configuration": {
+      "title": "Flowerfall",
+      "properties": {
+        "flowerfall.mode": {
+          "type": "string",
+          "enum": ["onTerminalSuccess", "off"],
+          "default": "onTerminalSuccess",
+          "description": "onTerminalSuccess: sprinkle after a terminal command succeeds. off: never automatically."
+        },
+        "flowerfall.emoji": { "type": "string", "default": "🌸", "description": "The emoji that falls." },
+        "flowerfall.duration": { "type": "number", "default": 2, "minimum": 0.5, "description": "Seconds each flower stays visible (bigger = longer sprinkle)." },
+        "flowerfall.count": { "type": "number", "default": 14, "description": "Flowers per sprinkle (per screen)." },
+        "flowerfall.size": { "type": "number", "default": 1, "description": "Size multiplier." },
+        "flowerfall.speed": { "type": "number", "default": 1, "description": "Fall speed multiplier." },
+        "flowerfall.opacity": { "type": "number", "default": 1, "minimum": 0, "maximum": 1, "description": "Overlay opacity." },
+        "flowerfall.ignoreCommands": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": ["cd", "ls", "pwd", "clear", "echo", "cat", "code", "open"],
+          "description": "Commands (first word) that never trigger flowers, even when they succeed."
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/vscode": "^1.93.0",
+    "typescript": "^5.4.0"
+  }
+}
