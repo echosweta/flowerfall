@@ -3,7 +3,7 @@
   "displayName": "Flowerfall",
   "description": "A 2-second sprinkle of pink flowers over your screen when a terminal command succeeds (macOS).",
   "version": "0.3.1",
-  "publisher": "echosweta",
+  "publisher": "maybesweta",
   "engines": {
     "vscode": "^1.93.0"
   },
