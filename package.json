@@ -1,8 +1,8 @@
 {
-  "name": "flowerfall",
-  "displayName": "Flowerfall",
+  "name": "spring-is-here",
+  "displayName": "Spring is here",
   "description": "A 2-second sprinkle of pink flowers over your screen when a terminal command succeeds (macOS).",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "publisher": "maybesweta",
   "engines": {
     "vscode": "^1.93.0"
@@ -25,7 +25,7 @@
     "commands": [
       {
         "command": "flowerfall.test",
-        "title": "Flowerfall: Sprinkle now"
+        "title": "Spring is here: Sprinkle now"
       }
     ],
     "configuration": {
@@ -101,9 +101,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/echosweta/flowerfall.git"
+    "url": "https://github.com/echosweta/spring-is-here.git"
   },
   "bugs": {
-    "url": "https://github.com/echosweta/flowerfall/issues"
-  }
+    "url": "https://github.com/echosweta/spring-is-here/issues"
+  },
+  "icon": "Images/cherry-blossom.png"
 }
