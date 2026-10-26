@@ -2,7 +2,7 @@
   "name": "spring-is-here",
   "displayName": "Spring is here",
   "description": "A 2-second sprinkle of pink flowers over your screen when a terminal command succeeds (macOS).",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "publisher": "maybesweta",
   "engines": {
     "vscode": "^1.93.0"
